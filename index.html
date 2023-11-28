@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>HTML Template til React</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Her skal du indsætte din react kode
+        const Example = () => {
+            return (
+                <h1>Hej verden</h1>
+            )
+        }
+
+        const JSXWithExpression = () => {
+          return (
+            <div>JSX er {5*2} gange bedre end HTML!</div>
+          )
+        }
+
+        // 1. Byg en funktion som returnerer et h2 tag med teksten 'JSX er godt for maven!'.
+        const HeadingDos = () => {
+          return (
+            <h2>JSX er godt for maven!</h2>
+          )
+        }
+
+        // 2. Byg en funktion som kan udregne og returnere summen af 10 * 10.
+        const SumOf = () => {
+          return (
+              10 * 10
+            )
+        }
+
+        // 3. Byg en funktion som kan returnere en ordered html liste med fem af dine livretter.
+        const FavoriteFood = () => {
+          return (
+            <ol>
+              <li>Lasagne</li>
+              <li>Tarteletter</li>
+              <li>Pizza</li>
+              <li>Mad</li>
+              <li>Mad</li>
+            </ol>
+            )
+        }
+
+        // 4. Byg en funktion som kan returnere to afsnit med hver deres tekst indhold efter eget valg.
+        const SectionsText = () => {
+          let text1 = 'valgfri tekst indhold asda';
+          let text2 = 'valgfri tekst indhold gretgr';
+          return (
+            <div>
+              <p>{text1}</p>
+              <p>{text2}</p>
+            </div>
+            )
+        }
+
+        // 5. Byg en funktion som kan det samme som funktionen i punkt 4 men med et react fragment på øverste niveau.
+        const SectionsTextWithFragment = () => {
+          let text1 = 'valgfri tekst indhold asda';
+          let text2 = 'valgfri tekst indhold';
+          return (
+            <>
+              <p>{text1}</p>
+              <p>{text2}</p>
+            </>
+            )
+        }
+
+        // 6. Byg en funktion som kan returnere et input element efter eget valg.
+        const InputElement = () => {
+          return (
+            <input placeholder="skriv her" />
+          )
+        }
+
+        // 7. Byg en funktion som kan returnere et section tag med klassen mainwrapper.
+        const SectionWithClass = () => {
+          return (
+            <section class="mainwrapper">section content</section>
+          )
+        }
+
+        // 8. Byg en funktion som kan returnere resultatet af en betinget statement. Hvis klokken er mindre end 12 skal funktionen returnere teksten Godmorgen - ellers skal den returnere teksten Goddag.
+        const GreetingMessage = () => {
+          const currentTime = new Date().getHours();
+          if (currentTime < 12) {
+            return <p>Godmorgen</p>
+          } else {
+            return <p>Goddag</p>
+          }
+        }
+
+        // 9. Gentag punkt 8 men med en ternary operator.
+        const GreetingMessageWithTernaryOperator = () => {
+          const currentTime = new Date().getHours();
+          const greeting = currentTime < 12 ? 'Godmorgen' : 'Goddag';
+          return (
+            <p>{greeting}</p>
+          )
+        }
+
+        // 10. Byg en funktion der kan kalde alle de andre af opgavens funktioner
+        const CallAllFunctions = () => {
+          return (
+            <div>
+              <HeadingDos />
+              <SumOf />
+              <FavoriteFood />
+              <SectionsText />
+              <SectionsTextWithFragment />
+              <InputElement />
+              <SectionWithClass />
+              <GreetingMessage />
+              <GreetingMessageWithTernaryOperator />
+            </div>
+          )
+        }
+
+        ReactDOM.render(
+          <CallAllFunctions />,
+          document.getElementById('root')
+        )
+
+    </script>
+
+  </body>
+</html>
